@@ -4,12 +4,41 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProyectoP2"
-    Shell.FlyoutBehavior="Disabled"
     Title="ProyectoP2">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Pagina Principal">
+        <ShellContent 
+            Title="Pagina Principal" 
+            ContentTemplate="{DataTemplate local:MainPage}" 
+            Route="MainPage"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Veiculos">
+        <ShellContent 
+            Title="Veiculos" 
+            ContentTemplate="{DataTemplate local:Vehiculos}" 
+            Route="Vehiculos"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Compradores">
+        <ShellContent 
+            Title="Compradores" 
+            ContentTemplate="{DataTemplate local:Compradores}" 
+            Route="Compradores"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Vendedores">
+        <ShellContent 
+            Title="Vendedores" 
+            ContentTemplate="{DataTemplate local:Vendedores}" 
+            Route="Vendedores"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Transaccion">
+        <ShellContent 
+            Title="Transaccion" 
+            ContentTemplate="{DataTemplate local:Transacciones}" 
+            Route="Transacciones"/>
+    </FlyoutItem>
 
 </Shell>
