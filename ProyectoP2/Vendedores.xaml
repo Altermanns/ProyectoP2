@@ -6,8 +6,9 @@
     <VerticalStackLayout VerticalOptions="Center" Padding="20">
         <Frame BorderColor="Gray" CornerRadius="10" Padding="20" HasShadow="True">
             <Grid>
-                <!-- Definición de Filas -->
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -15,7 +16,6 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <!-- Imagen dentro de Border -->
                 <Border Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="0">
                     <Image Margin="0" HeightRequest="90" WidthRequest="90" Source="dotnet_bot.png" />
                     <Border.StrokeShape>
@@ -23,17 +23,15 @@
                     </Border.StrokeShape>
                 </Border>
 
-                <!-- Texto de Bienvenida -->
                 <Label Grid.Row="1" Text="Bienvenido" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
 
-                <!-- Entrada de Usuario -->
-                <Entry Grid.Row="2" x:Name="usernameEntry" Placeholder="Usuario" PlaceholderColor="Gray" TextColor="Black" />
+                <Entry Grid.Row="2" x:Name="nameEntry" Placeholder="Nombre" PlaceholderColor="Gray" TextColor="Black" />
 
-                <!-- Entrada de Contraseña -->
-                <Entry Grid.Row="3" x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" PlaceholderColor="Gray" TextColor="Black" />
+                <Entry Grid.Row="3" x:Name="emailEntry" Placeholder="Correo Electrónico" PlaceholderColor="Gray" TextColor="Black" Keyboard="Email" />
 
-                <!-- Botón de Registro -->
-                <Button Grid.Row="4" x:Name="LoggingBTN" Text="Registrarse" Clicked="LoggingBTN_Clicked" BackgroundColor="Blue" TextColor="White" />
+                <DatePicker Grid.Row="4" x:Name="birthDatePicker" />
+
+                <Button Grid.Row="5" x:Name="LoggingBTN" Text="Registrarse" Clicked="LoggingBTN_Clicked" BackgroundColor="Blue" TextColor="White" />
             </Grid>
         </Frame>
     </VerticalStackLayout>

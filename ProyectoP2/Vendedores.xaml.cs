@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 namespace ProyectoP2;
 
 public partial class Vendedores : ContentPage
@@ -10,13 +9,17 @@ public partial class Vendedores : ContentPage
 
     private async void LoggingBTN_Clicked(object sender, EventArgs e)
     {
-        string username = usernameEntry.Text;
-        string password = passwordEntry.Text;
+        string name = nameEntry.Text;
+        string email = emailEntry.Text;
+        DateTime birthDate = birthDatePicker.Date;
 
-        // Validación de datos
-        if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password))
+        if (!string.IsNullOrWhiteSpace(name) &&
+            !string.IsNullOrWhiteSpace(email) &&
+            birthDate != null)
         {
-            await DisplayAlert("Registro exitoso", "Se ha registrado correctamente.", "OK");
+            await DisplayAlert("Registro exitoso",
+                $"Nombre: {name}\nCorreo: {email}\nFecha de Nacimiento: {birthDate.ToShortDateString()}",
+                "OK");
         }
         else
         {
