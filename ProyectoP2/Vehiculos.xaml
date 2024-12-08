@@ -3,10 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoP2.Vehiculos"
              Title="Vehiculos">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center" Padding="20">
+            <Frame BorderColor="Gray" CornerRadius="10" Padding="20" HasShadow="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="0">
+                        <Image Margin="0" HeightRequest="90" WidthRequest="90" Source="auto_icon.png" />
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="45" />
+                        </Border.StrokeShape>
+                    </Border>
+
+                    <Label Grid.Row="1" Text="Registrar Nuevo Auto" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
+
+                    <Entry Grid.Row="2" x:Name="marcaEntry" Placeholder="Marca" PlaceholderColor="Gray" TextColor="Black" />
+
+                    <Entry Grid.Row="3" x:Name="modeloEntry" Placeholder="Modelo" PlaceholderColor="Gray" TextColor="Black" />
+
+                    <Entry Grid.Row="4" x:Name="anioEntry" Placeholder="Año" PlaceholderColor="Gray" TextColor="Black" Keyboard="Numeric" />
+
+                    <Entry Grid.Row="5" x:Name="precioEntry" Placeholder="Precio de Venta" PlaceholderColor="Gray" TextColor="Black" Keyboard="Numeric" />
+
+                    <Entry Grid.Row="6" x:Name="kilometrajeEntry" Placeholder="Kilometraje" PlaceholderColor="Gray" TextColor="Black" Keyboard="Numeric" />
+
+                    <Picker Grid.Row="7" x:Name="combustiblePicker" Title="Tipo de Combustible" SelectedIndex="-1">
+                        <Picker.Items>
+                            <x:String>Gasolina</x:String>
+                            <x:String>Diesel</x:String>
+                            <x:String>Eléctrico</x:String>
+                            <x:String>Híbrido</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Entry Grid.Row="8" x:Name="ubicacionEntry" Placeholder="Ubicación" PlaceholderColor="Gray" TextColor="Black" />
+
+                    <Button Grid.Row="9" x:Name="agregarAutoBTN" Text="Agregar Auto" Clicked="AgregarAutoBTN_Clicked" BackgroundColor="Blue" TextColor="White" />
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

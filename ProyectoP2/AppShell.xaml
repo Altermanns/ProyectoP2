@@ -20,10 +20,10 @@
             Route="Vehiculos"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Compradores">
+    <FlyoutItem Title="Usuarios">
         <ShellContent 
-            Title="Compradores" 
-            ContentTemplate="{DataTemplate local:Compradores}" 
+            Title="Usuarios" 
+            ContentTemplate="{DataTemplate local:Usuarios}" 
             Route="Compradores"/>
     </FlyoutItem>
 
