@@ -7,23 +7,27 @@ public partial class Vendedores : ContentPage
         InitializeComponent();
     }
 
-    private async void LoggingBTN_Clicked(object sender, EventArgs e)
+    private async void RegisterBTN_Clicked(object sender, EventArgs e)
     {
+        // Capturar datos
+        string id = idEntry.Text;
         string name = nameEntry.Text;
         string email = emailEntry.Text;
-        DateTime birthDate = birthDatePicker.Date;
+        DateTime? birthDate = birthDatePicker.Date;
 
-        if (!string.IsNullOrWhiteSpace(name) &&
+        // Validación de datos
+        if (!string.IsNullOrWhiteSpace(id) &&
+            !string.IsNullOrWhiteSpace(name) &&
             !string.IsNullOrWhiteSpace(email) &&
-            birthDate != null)
+            birthDate.HasValue)
         {
-            await DisplayAlert("Registro exitoso",
-                $"Nombre: {name}\nCorreo: {email}\nFecha de Nacimiento: {birthDate.ToShortDateString()}",
-                "OK");
+            // Registro exitoso
+            await DisplayAlert("Registro exitoso", $"Usuario: {name}\nCorreo: {email}\nFecha de Nacimiento: {birthDate.Value.ToShortDateString()}\nID: {id}", "OK");
         }
         else
         {
-            await DisplayAlert("Registro fallido", "Por favor, complete todos los campos.", "OK");
+            // Error en el registro
+            await DisplayAlert("Registro fallido", "Por favor, complete todos los campos correctamente.", "OK");
         }
     }
 }
