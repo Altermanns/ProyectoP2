@@ -8,7 +8,6 @@
             Padding="30,0"
             Spacing="25">
             <Label Text="Bienvenido a la App de Autos" FontSize="Large" HorizontalOptions="Center" />
-            <Button Text="Agregar Auto" Clicked="IrAgregarAuto" />
             <Button Text="Ver Lista de Autos" Clicked="IrListaAutos" />
             <Label 
                 Text="El mejor sitio para encontrar el auto de tus sueños!"
