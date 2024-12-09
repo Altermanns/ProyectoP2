@@ -63,6 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ListaAutos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Transacciones.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

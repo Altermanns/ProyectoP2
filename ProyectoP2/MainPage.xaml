@@ -7,6 +7,9 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            <Label Text="Bienvenido a la App de Autos" FontSize="Large" HorizontalOptions="Center" />
+            <Button Text="Agregar Auto" Clicked="IrAgregarAuto" />
+            <Button Text="Ver Lista de Autos" Clicked="IrListaAutos" />
             <Label 
                 Text="El mejor sitio para encontrar el auto de tus sueños!"
                 Style="{StaticResource Headline}"
@@ -27,7 +30,7 @@
                     HorizontalOptions="FillAndExpand"
                     SemanticProperties.Description="Imagen ilustrativa de autos" />
             </Frame>
-            
+
             <Label
                 Text="Continua por la siguientes pagunas para descubirirlo."
                 Style="{StaticResource SubHeadline}"

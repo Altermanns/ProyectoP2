@@ -1,0 +1,27 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoP2.ListaAutos"
+             Title="Lista de Autos">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="Lista de Autos Registrados" FontSize="Large" HorizontalOptions="Center" />
+        <ListView x:Name="AutosListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+                            <Label Text="{Binding Marca}" FontSize="Medium" FontAttributes="Bold" />
+                            <Label Text="{Binding Modelo}" FontSize="Small" />
+                            <Label Text="{Binding Anio}" FontSize="Small" />
+                            <Label Text="{Binding Precio}" FontSize="Small" />
+                            <Label Text="{Binding Kilometraje}" FontSize="Small" />
+                            <Label Text="{Binding Combustible}" FontSize="Small" />
+                            <Label Text="{Binding Ubicacion}" FontSize="Small" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+
+</ContentPage>

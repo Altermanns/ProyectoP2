@@ -1,3 +1,5 @@
+using ProyectoP2.Datos;
+
 namespace ProyectoP2;
 
 public partial class Vehiculos : ContentPage
@@ -13,7 +15,7 @@ public partial class Vehiculos : ContentPage
         string anio = anioEntry.Text;
         string precio = precioEntry.Text;
         string kilometraje = kilometrajeEntry.Text;
-        string tipoCombustible = combustiblePicker.SelectedItem as string;
+        string tipoCombustible = combustibleEntry.Text;
         string ubicacion = ubicacionEntry.Text;
 
         if (!string.IsNullOrWhiteSpace(marca) &&
@@ -24,13 +26,32 @@ public partial class Vehiculos : ContentPage
             !string.IsNullOrWhiteSpace(tipoCombustible) &&
             !string.IsNullOrWhiteSpace(ubicacion))
         {
-            await DisplayAlert("Auto agregado",
-                $"Marca: {marca}\nModelo: {modelo}\nAño: {anio}\nPrecio: {precio}\nKilometraje: {kilometraje}\nCombustible: {tipoCombustible}\nUbicación: {ubicacion}",
-                "OK");
+            var auto = new Auto
+            {
+                Marca = marca,
+                Modelo = modelo,
+                Anio = anio,
+                Precio = precio,
+                Kilometraje = kilometraje,
+                Combustible = tipoCombustible,
+                Ubicacion = ubicacion
+            };
+
+            AutoData.Autos.Add(auto);
+
+            await DisplayAlert("Auto agregado", "Se ha registrado el automóvil correctamente.", "OK");
+
+            marcaEntry.Text = string.Empty;
+            modeloEntry.Text = string.Empty;
+            anioEntry.Text = string.Empty;
+            precioEntry.Text = string.Empty;
+            kilometrajeEntry.Text = string.Empty;
+            combustibleEntry.Text = string.Empty;
+            ubicacionEntry.Text = string.Empty;
         }
         else
         {
-            await DisplayAlert("Registro fallido", "Por favor, complete todos los campos correctamente.", "OK");
+            await DisplayAlert("Error", "Por favor, complete todos los campos.", "OK");
         }
     }
 }
