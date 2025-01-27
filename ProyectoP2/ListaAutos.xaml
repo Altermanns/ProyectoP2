@@ -4,6 +4,8 @@
              Title="Lista de Autos">
 
     <VerticalStackLayout Padding="20">
+
+
         <Label Text="Lista de Autos Registrados" FontSize="Large" HorizontalOptions="Center" />
         <ListView x:Name="AutosListView">
             <ListView.ItemTemplate>

@@ -7,4 +7,6 @@ public partial class ListaAutos : ContentPage
         InitializeComponent();
         AutosListView.ItemsSource = AutoData.Autos;
     }
+
+
 }

@@ -1,12 +1,46 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoP2.Transacciones"
-             Title="Transacciones">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Gestión de Transacciones">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" BackgroundColor="#F5F5F5">
+            <Frame BackgroundColor="#3498DB" CornerRadius="10" Padding="15" Margin="0,0,0,20">
+                <Label 
+                    Text="Registrar Transacción" 
+                    FontSize="28" 
+                    HorizontalOptions="Center" 
+                    FontAttributes="Bold" 
+                    TextColor="White" />
+            </Frame>
+
+            <VerticalStackLayout Spacing="15" Padding="10">
+                <Label Text="Vendedor (ID)" FontSize="16" TextColor="#34495E" />
+                <Entry x:Name="VendedorEntry" Placeholder="Ingresa el ID del vendedor" Keyboard="Numeric" />
+
+                <Label Text="Comprador (ID)" FontSize="16" TextColor="#34495E" />
+                <Entry x:Name="CompradorEntry" Placeholder="Ingresa el ID del comprador" Keyboard="Numeric" />
+
+                <Label Text="Vehículo (ID)" FontSize="16" TextColor="#34495E" />
+                <Entry x:Name="VehiculoEntry" Placeholder="Ingresa el ID del vehículo" Keyboard="Numeric" />
+
+                <Label Text="Fecha de Transacción" FontSize="16" TextColor="#34495E" />
+                <DatePicker x:Name="FechaPicker" />
+
+                <Label Text="Precio Final" FontSize="16" TextColor="#34495E" />
+                <Entry x:Name="PrecioEntry" Placeholder="Ingresa el precio final" Keyboard="Numeric" />
+
+                <Button 
+                    Text="Registrar Transacción" 
+                    BackgroundColor="#27AE60" 
+                    TextColor="White" 
+                    CornerRadius="8" 
+                    Clicked="RegistrarTransaccion_Clicked" />
+            </VerticalStackLayout>
+
+           
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
+

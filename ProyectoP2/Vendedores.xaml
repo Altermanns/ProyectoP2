@@ -1,11 +1,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoP2.Vendedores"
-             Title="Vendedores">
+             Title="Vendedores"
+             BackgroundColor="#F5F5F5">
 
     <ScrollView>
-        <VerticalStackLayout VerticalOptions="Center" Padding="20">
-            <Frame BorderColor="Gray" CornerRadius="10" Padding="20" HasShadow="True">
+        <VerticalStackLayout VerticalOptions="Center" Padding="20" Spacing="15">
+            <Frame BorderColor="#D3D3D3" CornerRadius="15" Padding="25" HasShadow="True" BackgroundColor="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -18,26 +19,43 @@
                     </Grid.RowDefinitions>
 
                     <Border Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Margin="0">
-                        <Image Margin="0" HeightRequest="90" WidthRequest="90" Source="dotnet_bot.png" />
+                        <Image Margin="0" HeightRequest="100" WidthRequest="100" Source="dotnet_bot.png" />
                         <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="45" />
+                            <RoundRectangle CornerRadius="50" />
                         </Border.StrokeShape>
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#4CAF50" Offset="0.0" />
+                                <GradientStop Color="#81C784" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Border.Background>
                     </Border>
 
-                    <Label Grid.Row="1" Text="Bienvenido" HorizontalOptions="Center" FontSize="Large" TextColor="Black" />
+                    <Label Grid.Row="1" Text="Bienvenido" HorizontalOptions="Center" 
+                           FontSize="Large" FontAttributes="Bold" TextColor="#333333" />
+                    
+                    <Entry Grid.Row="2" x:Name="idEntry" Placeholder="ID de Usuario" 
+                           PlaceholderColor="#B0B0B0" TextColor="#333333" 
+                           Keyboard="Numeric" BackgroundColor="#F0F0F0" />
 
-                    <Entry Grid.Row="2" x:Name="idEntry" Placeholder="ID de Usuario" PlaceholderColor="Gray" TextColor="Black" Keyboard="Numeric" />
+                    <Entry Grid.Row="3" x:Name="nameEntry" Placeholder="Nombre Completo" 
+                           PlaceholderColor="#B0B0B0" TextColor="#333333" 
+                           BackgroundColor="#F0F0F0" />
 
-                    <Entry Grid.Row="3" x:Name="nameEntry" Placeholder="Nombre Completo" PlaceholderColor="Gray" TextColor="Black" />
+                    <Entry Grid.Row="4" x:Name="emailEntry" Placeholder="Correo Electrónico" 
+                           PlaceholderColor="#B0B0B0" TextColor="#333333" 
+                           Keyboard="Email" BackgroundColor="#F0F0F0" />
 
-                    <Entry Grid.Row="4" x:Name="emailEntry" Placeholder="Correo Electrónico" PlaceholderColor="Gray" TextColor="Black" Keyboard="Email" />
+                    <DatePicker Grid.Row="5" x:Name="birthDatePicker" Format="D" 
+                                BackgroundColor="#F0F0F0" TextColor="#333333" />
 
-                    <DatePicker Grid.Row="5" x:Name="birthDatePicker" Format="D" />
-
-                    <Button Grid.Row="6" x:Name="registerBTN" Text="Registrarse" Clicked="RegisterBTN_Clicked" BackgroundColor="Blue" TextColor="White" />
+                    <Button Grid.Row="6" x:Name="registerBTN" Text="Registrarse" 
+                            Clicked="RegisterBTN_Clicked" BackgroundColor="#1976D2" 
+                            TextColor="White" CornerRadius="10" FontAttributes="Bold" />
                 </Grid>
             </Frame>
         </VerticalStackLayout>
     </ScrollView>
 
-</ContentPage>
+    </ContentPage>
+
